@@ -23,7 +23,7 @@ Feature: As a Property searcher i should be able to search a property from the r
       | 4         | Houses        | london | Within 1 mile| 600,000  |800,000  |
 
 
-  Scenario: register in rightmove page
+  Scenario: register in rightmove pages
   Given i am on rightmove home page
   And i click on a link with id "sign-in"
   Then  i should see "Create Account"case sensitive message in the browser
