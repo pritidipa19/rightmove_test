@@ -68,3 +68,24 @@ end
 And(/^i click on a link with id "([^"]*)"$/) do |link_id|
   @browser.link(:id, link_id).when_present.click
 end
+
+
+Then(/^i should get the text from the first property$/) do
+  sleep 5
+  @browser.h2s(:class,"propertyCard-title").each do
+  |address|
+  puts /\d/.match(address.text)
+  end
+
+end
+
+
+Then(/^i should get the date from he property listed$/) do
+  sleep 5
+  @browser.spans(:class,"propertyCard-branchSummary-addedOrReduced").each do
+    |dates|
+    if (dates.visible?)
+    puts /\d+\W\d+\W\d+/.match(dates.when_present.text)
+    end
+  end
+end
